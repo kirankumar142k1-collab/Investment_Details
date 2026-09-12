@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies (skip optional native modules)
+        run: npm ci --no-optional
 
       - name: Build
         run: npm run build
